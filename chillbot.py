@@ -139,7 +139,7 @@ def query_snippets(user_input: str, model_name: str = None):
         vector=embedding,
         top_k=3,
         include_metadata=True,
-        namespace=owner_manuals,
+        namespace=product_information,
         filter=filter_dict
     )
     return [
