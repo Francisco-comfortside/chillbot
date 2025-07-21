@@ -19,6 +19,10 @@ openai_client = OpenAI(api_key=OPENAI_API_KEY)
 pc = Pinecone(api_key=PINECONE_API_KEY)
 index = pc.Index("ai-agent")
 
+# namespaces
+owner_manuals = "owner-manuals"
+product_information = "product-information"
+
 # System prompt for GPT
 SYSTEM_PROMPT = """
 Comfortside LLC AI Agent Prompt
@@ -135,7 +139,7 @@ def query_snippets(user_input: str, model_name: str = None):
         vector=embedding,
         top_k=3,
         include_metadata=True,
-        namespace="product-information",
+        namespace=owner_manuals,
         filter=filter_dict
     )
     return [
