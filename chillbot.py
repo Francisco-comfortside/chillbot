@@ -166,7 +166,7 @@ def generate_response(user_input: str, context_snippets: list[str], chat_history
 # --- Streamlit UI ---
 
 st.set_page_config(page_title="Comfortside AI Agent", page_icon="🤖", layout="centered")
-st.title("Comfortside AI Support Agent")
+st.title("Comfortside AI Support.\nType your question below.")
 
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = []
@@ -177,7 +177,7 @@ for i, msg in enumerate(st.session_state.chat_history):
         st.markdown(msg["content"])
 
 # User input
-if user_input := st.chat_input("Ask a question about your air conditioning system..."):
+if user_input := st.chat_input("Ask me a question..."):
     st.session_state.chat_history.append({"role": "user", "content": user_input})
     with st.chat_message("user"):
         st.markdown(user_input)
