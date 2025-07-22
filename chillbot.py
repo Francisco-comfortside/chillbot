@@ -20,7 +20,7 @@ pc = Pinecone(api_key=PINECONE_API_KEY)
 index = pc.Index("ai-agent")
 
 # namespaces
-owner_manuals = "owner-manuals"
+owner_manuals = "product-information"
 product_information = "product-information"
 
 # System prompt for GPT
