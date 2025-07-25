@@ -202,6 +202,7 @@ if user_input := st.chat_input("Ask me a question..."):
     st.session_state.chat_history.append(assistant_message)
 
     with st.chat_message("assistant"):
+        st.markdown(snippets)
         st.markdown(response)
 
     # ✅ Store latest exchange for feedback
